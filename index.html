@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <title>Clan Nufan - Lineage 2</title>
 
+  <!-- ──────  ESTILOS  ────── -->
   <style>
-    /* --- Estilos generales --- */
+    /* --- Estructura general --- */
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
@@ -16,28 +17,39 @@
       padding: 20px;
       background: #fff;
       border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
     h1, h2 { text-align: center; }
     ul     { padding-left: 20px; }
 
-    /* --- Bloque de contacto --- */
+    /* --- Contenedor con imágenes laterales --- */
+    .wrapper-contact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;          /* separación entre elementos */
+      flex-wrap: wrap;    /* se apilan en pantallas estrechas */
+      margin: 40px 0 20px;
+    }
+
+    /* Imágenes de los lados */
+    .side-img {
+      width: 28%;
+      max-width: 220px;
+      height: auto;
+    }
+
+    /* Bloque de texto central */
     .contacto {
-      margin: 30px auto 10px;
+      flex: 1 1 300px;    /* crece y, si falta espacio, al menos 300 px */
       text-align: center;
       font-weight: bold;
-    }
-    .contacto svg {
-      width: 38px;
-      height: 38px;
-      vertical-align: middle;
-      margin-bottom: -6px;   /* Ajuste óptico */
     }
     .contacto a {
       display: inline-block;
       margin: 8px 0;
       padding: 6px 14px;
-      background: #5865F2;   /* Color oficial Discord */
+      background: #5865F2;     /* color oficial Discord */
       color: #fff;
       border-radius: 4px;
       text-decoration: none;
@@ -45,6 +57,11 @@
       transition: filter .2s;
     }
     .contacto a:hover { filter: brightness(1.15); }
+
+    /* Móvil: ocultar ilustraciones */
+    @media (max-width: 600px) {
+      .side-img { display: none; }
+    }
   </style>
 </head>
 
@@ -79,30 +96,40 @@
     <li>❌ Nada de mala onda ni trolls</li>
     <li>🤝 Colaboración con el clan:<br /><br />
       – Si estás por debajo de nivel 20, te pedimos entregar un
-      <em>"Proof of Loyalty"</em> al cambiar tu primera profesión, como muestra
-      de apoyo al clan que te acoge.<br /><br />
+      <em>&quot;Proof of Loyalty&quot;</em> al cambiar tu primera profesión,
+      como muestra de apoyo al clan que te acoge.<br /><br />
       – Si estás por encima de nivel 20, también te pedimos entregar un
-      <em>"Proof of Loyalty"</em> al ingresar, para seguir subiendo las skills
-      pasivas del clan, que benefician a todos los miembros.
+      <em>&quot;Proof of Loyalty&quot;</em> al ingresar, para seguir subiendo
+      las skills pasivas del clan, que benefician a todos los miembros.
     </li>
   </ul>
 
-  <!-- Bloque único de contacto -->
-  <div class="contacto">
-    <!-- Ícono (logo Discord simplificado) -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 240">
-      <path fill="#5865F2" d="M104 104c..."/><!-- Recortado por brevedad -->
-    </svg>
-    <br />
-    📨 ¿Querés unirte a la comunidad?<br />
-    <a href="https://discord.gg/rQbahNTRF3" target="_blank" rel="noopener">
-      Únete a nuestro Discord
-    </a>
-    <br />
-    O enviá un /whisp in-game a
-    <strong>Sweeperx, Endika, LemonSavage</strong> o <strong>Akrahel</strong>.
-    <br /><br />
-    🎧 <em>El Discord es opcional, pero siempre bienvenido.</em>
+  <!-- ──────  BLOQUE DE CONTACTO CON ILUSTRACIONES  ────── -->
+  <div class="wrapper-contact">
+    <!-- Imagen izquierda -->
+    <img src="img/pngegg.png"
+         alt="Personaje femenino de Lineage 2"
+         class="side-img" />
+
+    <!-- Texto central -->
+    <div class="contacto">
+      📨 ¿Querés unirte a la comunidad?<br />
+      <a href="https://discord.gg/rQbahNTRF3"
+         target="_blank" rel="noopener">
+        Únete a nuestro Discord
+      </a>
+      <br />
+      o enviá un /whisp in-game a
+      <strong>Sweeperx, Endika, LemonSavage</strong> o
+      <strong>Akrahel</strong>.
+      <br /><br />
+      🎧 <em>El Discord es opcional, pero siempre bienvenido.</em>
+    </div>
+
+    <!-- Imagen derecha -->
+    <img src="img/pngwing.png"
+         alt="Dark Elf de Lineage 2"
+         class="side-img" />
   </div>
 </body>
 </html>
